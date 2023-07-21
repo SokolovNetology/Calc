@@ -1,5 +1,5 @@
 package worker;
 @FunctionalInterface
 public interface OnTaskErrorListener {
-    void onError(String error);
+    void onError(String result);
 }

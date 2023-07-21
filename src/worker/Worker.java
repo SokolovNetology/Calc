@@ -1,6 +1,6 @@
 package worker;
 
-public class Worker implements OnTaskDoneListener,OnTaskErrorListener{
+public class Worker {
     private OnTaskDoneListener callback;
     private OnTaskErrorListener errorCallback;
     public Worker(OnTaskDoneListener callback, OnTaskErrorListener errorCallback) {
@@ -9,21 +9,11 @@ public class Worker implements OnTaskDoneListener,OnTaskErrorListener{
     }
         public void start() {
             for (int i = 0; i < 100; i++) {
+                if(i == 33){
+                    errorCallback.onError("Task " + i + " failed");
+                } else {
                 callback.onDone("Task " + i + " is done");
             }
-
                 }
-
-    @Override
-    public void onDone(String result) {
-        
-    }
-
-    @Override
-    public void onError(String error) {
-
-    }
-
-    public void stop() {
     }
 }
