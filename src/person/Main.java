@@ -3,6 +3,8 @@ package person;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import static person.Education.HIGHER;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -24,6 +26,7 @@ public class Main {
             System.out.println(persons.stream()
                     .filter(x -> x.getAge()>= 18)
                     .filter(x -> x.getAge()<= 65)
+                    .filter(x -> x.getEducation()==HIGHER)
                     .map(Person::getFamily)
                     .collect(Collectors.toList()));
         }
