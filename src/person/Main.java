@@ -32,8 +32,8 @@ public class Main {
                     .collect(Collectors.toList()));
 
             System.out.println(persons.stream()
-                    .filter(man->man.getSex()==Sex.MAN && man.getAge()<65 && man.getEducation()==Education.HIGHER ||
-                    man.getSex()==Sex.WOMAN && man.getAge()>18 && man.getAge()<60 && man.getEducation()==Education.HIGHER)
+                    .filter(man->man.getSex()==Sex.MAN && man.getAge()<=65 && man.getAge()>=18 && man.getEducation()==Education.HIGHER ||
+                    man.getSex()==Sex.WOMAN && man.getAge()>=18 && man.getAge()<=60 && man.getEducation()==Education.HIGHER)
                     .sorted(Comparator.comparing(Person::getFamily))
                     .collect(Collectors.toList()));
         }
