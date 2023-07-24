@@ -7,30 +7,29 @@ public class Main {
         // Создание директорий
         StringBuilder stringBuilder = new StringBuilder();
         File dir = new File("C:Games");
-        if (dir.mkdir()) {
-            System.out.println("Каталог создан");
-        }
+        dir.mkdir();
             stringBuilder.append("C:Games");
         System.out.println();
-        File dir1 = new File(dir, "C:Games/src");
+        File dir1 = new File(dir, "src");
         dir1.mkdir();
-            stringBuilder.append("src");
-             System.out.println(dir1);
-        File dir2 = new File(dir, "C:Games/res");
-        dir2.mkdir();
-             stringBuilder.append("C:Games/res");
-        File dir3 = new File(dir, "C:Games/save games");
-        dir3.mkdir();
-             stringBuilder.append("res");
-        File dir4 = new File(dir, "save games");
-        dir4.mkdir();
-             stringBuilder.append("save games");
-        File dir5 = new File("src/main");
-        dir5.mkdir();
              stringBuilder.append("src/main");
-        File dir6 = new File("src/test");
+        File dir2 = new File(dir1, "main");
+        dir2.mkdir();
+             stringBuilder.append("src/main");
+        File dir3 = new File(dir1, "test");
+        dir3.mkdir();
+        stringBuilder.append("test");
+
+        File dir4 = new File(dir, "res");
+        dir4.mkdir();
+             stringBuilder.append("res");
+        File dir5 = new File(dir, "save games");
+        dir5.mkdir();
+             stringBuilder.append("res");
+        File dir6 = new File(dir, "save games");
         dir6.mkdir();
-              stringBuilder.append("src/test");
+             stringBuilder.append("save games");
+
         File mainFile = new File(dir1, "/main/Main.java");
              stringBuilder.append("/main/Main.java");
         File utilsFile = new File(dir1, "/main/Utils.java");
