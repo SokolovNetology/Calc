@@ -19,12 +19,12 @@ public class Main {
         File dir2 = new File(dir, "C:Games/res");
         dir2.mkdir();
              stringBuilder.append("C:Games/res");
-        File dir3 = new File(dir, "C:Games/savegames");
+        File dir3 = new File(dir, "C:Games/save games");
         dir3.mkdir();
              stringBuilder.append("res");
-        File dir4 = new File(dir, "savegames");
+        File dir4 = new File(dir, "save games");
         dir4.mkdir();
-             stringBuilder.append("savegames");
+             stringBuilder.append("save games");
         File dir5 = new File("src/main");
         dir5.mkdir();
              stringBuilder.append("src/main");
@@ -39,15 +39,15 @@ public class Main {
             mainFile.createNewFile();
             utilsFile.createNewFile();
 
-            File drawablesDir = new File(dir2, "drawables");
+            File drawablesDir = new File(dir2, "res/drawables");
             drawablesDir.mkdir();
-               stringBuilder.append("drawables");
-            File vectorsDir = new File(dir2, "vectors");
+               stringBuilder.append("res/drawables");
+            File vectorsDir = new File(dir2, "res/vectors");
             vectorsDir.mkdir();
-                stringBuilder.append("vectors");
-            File iconsDir = new File(dir2, "icons");
+                stringBuilder.append("res/vectors");
+            File iconsDir = new File(dir2, "res/icons");
             iconsDir.mkdir();
-                  stringBuilder.append("icons");
+                  stringBuilder.append("res/icons");
             File tempFile = new File(dir2, "temp.txt");
             tempFile.createNewFile();
 
