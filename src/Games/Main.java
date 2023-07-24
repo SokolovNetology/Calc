@@ -1,5 +1,6 @@
 package Games;
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 
 public class Main {
@@ -58,7 +59,13 @@ public class Main {
             System.out.println("Произошла ошибка при создании директорий и файлов!");
             exception.printStackTrace();
         }
+        try(FileWriter writer = new FileWriter("temp.txt",false)){
+             writer.write(stringBuilder.toString());
+             writer.flush();
+          } catch (IOException exception){
+            System.out.println(exception.getMessage());
     }
+}
 }
 
 
