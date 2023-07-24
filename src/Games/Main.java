@@ -29,6 +29,9 @@ public class Main {
         File dir6 = new File(dir, "save games");
         dir6.mkdir();
              stringBuilder.append("save games");
+        File dir7 = new File(dir, "temp");
+        dir7.mkdir();
+        stringBuilder.append("temp");
 
         File mainFile = new File(dir1, "/main/Main.java");
              stringBuilder.append("/main/Main.java");
@@ -47,7 +50,7 @@ public class Main {
             File iconsDir = new File(dir2, "res/icons");
             iconsDir.mkdir();
                   stringBuilder.append("res/icons");
-            File tempFile = new File(dir2, "temp.txt");
+            File tempFile = new File(dir7, "temp.txt");
             tempFile.createNewFile();
 
             System.out.println("Структура директорий и файлов задана успешно!");
