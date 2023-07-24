@@ -59,7 +59,7 @@ public class Main {
             System.out.println("Произошла ошибка при создании директорий и файлов!");
             exception.printStackTrace();
         }
-        try(FileWriter writer = new FileWriter("temp.txt",false)){
+        try(FileWriter writer = new FileWriter(dir7 +"/temp.txt",false)){
              writer.write(stringBuilder.toString());
              writer.flush();
           } catch (IOException exception){
