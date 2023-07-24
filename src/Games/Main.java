@@ -3,10 +3,10 @@ import java.io.File;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
         // Создание директорий
         File dir = new File("С://Games");
-        if (dir.mkdir()){
+        if (dir.mkdir()) {
             System.out.println("Каталог создан");
         }
 
@@ -22,32 +22,31 @@ public class Main {
 
         File dir4 = new File(dir, "temp");
         dir4.mkdir();
-
-        // Создание файлов
         File mainFile = new File(dir1, "Main.java");
-        mainFile.createNewFile();
         File utilsFile = new File(dir1, "Utils.java");
-        utilsFile.createNewFile();
-
         try {
+            mainFile.createNewFile();
+            utilsFile.createNewFile();
 
+            File drawablesDir = new File(dir2, "drawables");
+            drawablesDir.mkdir();
 
-            File drawablesDir2 = new File(dir2, "drawables");
-            drawablesDir2.mkdir();
+            File vectorsDir = new File(dir2, "vectors");
+            vectorsDir.mkdir();
 
-            File vectorsDir2 = new File(dir2, "vectors");
-            vectorsDir2.mkdir();
+            File iconsDir = new File(dir2, "icons");
+            iconsDir.mkdir();
 
-            File iconsDir2 = new File(dir2, "icons");
-            iconsDir2.mkdir();
-
-            File tempFile = new File(dir4, "temp.txt");
+            File tempFile = new File(dir2, "temp.txt");
             tempFile.createNewFile();
 
             System.out.println("Структура директорий и файлов задана успешно!");
-        } catch (Exception e) {
+        } catch (Exception exception) {
             System.out.println("Произошла ошибка при создании директорий и файлов!");
-            e.printStackTrace();
+            exception.printStackTrace();
         }
     }
 }
+
+
+
