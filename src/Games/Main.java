@@ -11,23 +11,30 @@ public class Main {
             System.out.println("Каталог создан");
         }
             stringBuilder.append("C:Games");
-
-        File dir1 = new File(dir, "src");
+        System.out.println();
+        File dir1 = new File(dir, "C:Games/src");
         dir1.mkdir();
             stringBuilder.append("src");
-        File dir2 = new File(dir, "res");
+             System.out.println(dir1);
+        File dir2 = new File(dir, "C:Games/res");
         dir2.mkdir();
-             stringBuilder.append("res");
-        File dir3 = new File(dir, "savegames");
+             stringBuilder.append("C:Games/res");
+        File dir3 = new File(dir, "C:Games/savegames");
         dir3.mkdir();
              stringBuilder.append("res");
         File dir4 = new File(dir, "savegames");
         dir4.mkdir();
              stringBuilder.append("savegames");
-        File mainFile = new File(dir1, "/папка/Main.java");
-             stringBuilder.append("/папка/Main.java");
-        File utilsFile = new File(dir1, "/папка/Utils.java");
-             stringBuilder.append("/папка/Utils.java");
+        File dir5 = new File("src/main");
+        dir5.mkdir();
+             stringBuilder.append("src/main");
+        File dir6 = new File("src/test");
+        dir6.mkdir();
+              stringBuilder.append("src/test");
+        File mainFile = new File(dir1, "/main/Main.java");
+             stringBuilder.append("/main/Main.java");
+        File utilsFile = new File(dir1, "/main/Utils.java");
+             stringBuilder.append("/main/Utils.java");
         try {
             mainFile.createNewFile();
             utilsFile.createNewFile();
