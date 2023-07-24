@@ -1,44 +1,47 @@
 package Games;
 import java.io.File;
+import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // Создание директорий
-        File Games = new File("Games");
-        Games.mkdir();
+        File dir = new File("С://Games");
+        if (dir.mkdir()){
+            System.out.println("Каталог создан");
+        }
 
-        File src = new File(Games, "src");
-        src.mkdir();
 
-        File res = new File(Games, "res");
-        res.mkdir();
+        File dir1 = new File(dir, "src");
+        dir1.mkdir();
 
-        File savegamesDir = new File(Games, "savegames");
-        savegamesDir.mkdir();
+        File dir2 = new File(dir, "res");
+        dir2.mkdir();
 
-        File tempDir = new File(Games, "temp");
-        tempDir.mkdir();
+        File dir3 = new File(dir, "savegames");
+        dir3.mkdir();
+
+        File dir4 = new File(dir, "temp");
+        dir4.mkdir();
 
         // Создание файлов
-        File mainFile = new File(src, "Main.java");
-
-        File utilsFile = new File(src, "Utils.java");
-
+        File mainFile = new File(dir1, "Main.java");
+        mainFile.createNewFile();
+        File utilsFile = new File(dir1, "Utils.java");
+        utilsFile.createNewFile();
 
         try {
-            mainFile.createNewFile();
-            utilsFile.createNewFile();
 
-            File drawablesDir = new File(res, "drawables");
-            drawablesDir.mkdir();
 
-            File vectorsDir = new File(res, "vectors");
-            vectorsDir.mkdir();
+            File drawablesDir2 = new File(dir2, "drawables");
+            drawablesDir2.mkdir();
 
-            File iconsDir = new File(res, "icons");
-            iconsDir.mkdir();
+            File vectorsDir2 = new File(dir2, "vectors");
+            vectorsDir2.mkdir();
 
-            File tempFile = new File(tempDir, "temp.txt");
+            File iconsDir2 = new File(dir2, "icons");
+            iconsDir2.mkdir();
+
+            File tempFile = new File(dir4, "temp.txt");
             tempFile.createNewFile();
 
             System.out.println("Структура директорий и файлов задана успешно!");
