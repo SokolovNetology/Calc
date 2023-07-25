@@ -2,12 +2,8 @@ package Games;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
-
 public class Main {
     public static void main(String[] args) throws Exception {
-        // Создание директорий
-
         StringBuilder stringBuilder = new StringBuilder();
         File dir = new File("C:Games");
         if (!dir.exists()) {
@@ -90,16 +86,6 @@ public class Main {
         }
         stringBuilder.append("Games/src/test");
 
-        File tempFile = new File("Games/temp/temp.txt");
-        try {
-            if (tempFile.createNewFile()) {
-                System.out.println("Данный файл Games/temp/temp.txt успешно создан");
-            } else {
-                System.out.println("Данный файл Games/temp/temp.txt не создан");
-            }
-        } catch (Exception e) {
-            System.out.println("Не удалось создать файл Games/temp/temp.txt");
-            e.printStackTrace();
             File mainFile1 = new File("Games/src/main/Main.java");
             File mainFile2 = new File("Games/src/main/Utils.java");
             try {
@@ -112,28 +98,38 @@ public class Main {
                 System.out.println("Не удалось создать файлы Main.java и Utils.java");
                 ev.printStackTrace();
             }
-
             // Создание трех директорий в директории res
             File drawablesDir = new File("Games/res/drawables");
             File vectorsDir = new File("Games/res/vectors");
             File iconsDir = new File("Games/res/icons");
-            if (drawablesDir.mkdir() && vectorsDir.mkdir() && iconsDir.mkdir()) {
-                System.out.println("Директории drawables, vectors, icons успешно созданы");
-            } else {
-                System.out.println("Не удалось создать директории drawables, vectors, icons");
+            if (!drawablesDir.exists() && !vectorsDir.exists() && iconsDir.exists()) {
+                if (drawablesDir.mkdir() && vectorsDir.mkdir() && iconsDir.mkdir()) {
+                    System.out.println("Директории drawables, vectors, icons успешно созданы");
+                } else {
+                    System.out.println("Не удалось создать директории drawables, vectors, icons");} }
+                else {
+                    System.out.println("Такие директории drawables, vectors, icons существуют");
+                }
+            File tempFile = new File("Games/temp/temp.txt");
+            try {
+                if (tempFile.createNewFile()) {
+                    System.out.println("Данный файл Games/temp/temp.txt успешно создан");
+                } else {
+                    System.out.println("Данный файл Games/temp/temp.txt не создан");
+                }
+            } catch (Exception e) {
+                System.out.println("Не удалось создать файл Games/temp/temp.txt");
+                e.printStackTrace();
+
+                try (FileWriter writer = new FileWriter(dir6 + "/temp.txt", false)) {
+                    writer.write(stringBuilder.toString());
+                    writer.flush();
+                } catch (IOException exception) {
+                    System.out.println(exception.getMessage());
+                }
+
             }
         }
 
-        try (FileWriter writer = new FileWriter(dir6 + "/temp.txt", false)) {
-            writer.write(stringBuilder.toString());
-            writer.flush();
-        } catch (IOException exception) {
-            System.out.println(exception.getMessage());
-        }
 
     }
-}
-
-
-
-
