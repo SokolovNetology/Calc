@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         StringBuilder logBuilder = new StringBuilder();
-        createFileLog(logBuilder);
+
         List<String> directories = List.of(
                 "C:\\User\\sokol\\Main\\src\\Games\\",
                          "C:\\User\\sokol\\Main\\src\\Games\\src",
