@@ -37,9 +37,6 @@ public class Main {
         }
     }
 
-    private static void createFileLog(StringBuilder logBuilder) {
-    }
-
     public static void createDirectory (String path, StringBuilder logBuilder) {
         File directory = new File(path);
         boolean created = directory.mkdirs();
