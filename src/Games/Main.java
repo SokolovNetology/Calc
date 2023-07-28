@@ -1,17 +1,17 @@
 package Games;
 
-import javax.swing.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 
 public class Main {
     public static void main(String[] args) throws IOException {
+
         StringBuilder logBuilder = new StringBuilder();
+        createFileLog(logBuilder);
         List<String> directories = List.of(
                 "C:\\User\\sokol\\Main\\src\\Games\\",
                          "C:\\User\\sokol\\Main\\src\\Games\\src",
@@ -27,27 +27,27 @@ public class Main {
             createDirectory(directory, logBuilder);
             //System.out.println(directory);
         }
-        List<String> filePaths = List.of(
+        List<String> file = List.of(
                           "C:\\User\\sokol\\Main\\src\\Games\\src\\main\\Main.java",
                           "C:\\User\\sokol\\Main\\src\\Games\\src\\main\\Utils.java",
                           "C:\\User\\sokol\\Main\\src\\Games\\res\\temp\\temp.txt");
-        for (String file : filePaths) {
-            createFile(file, logBuilder);
+        for (String fileP : file) {
+            createFile(fileP, logBuilder);
 
         }
     }
 
-    private static void createFileLog() {
+    private static void createFileLog(StringBuilder logBuilder) {
     }
 
-    public static void createDirectory (String path, StringBuilder logBuilder) throws IOException {
+    public static void createDirectory (String path, StringBuilder logBuilder) {
         File directory = new File(path);
         boolean created = directory.mkdirs();
 
         String status = created ? "успешно" : "не удалось";
         logBuilder.append("Папка ").append(path).append(" создана (дата/время) - ")
                 .append(LocalDateTime.now()).append(", ").append(status).append("\n");
-        //System.out.println(logBuilder);
+
     }
 
     public static void createFile(String path, StringBuilder logBuilder) {
@@ -61,16 +61,17 @@ public class Main {
             logBuilder.append("Ошибка при создании файла").append(path).append("дата/время  ").
                     append(LocalDateTime.now()).append(", ").append(e.getMessage()).append("\n");
         }
-
+              String filePaths = "C:\\User\\sokol\\Main\\src\\Games\\res\\temp\\text";
+              String content = "Ошибка при записи лога в файл temp.txt: ";
         public static void createFileLog (String filePaths, String content) {
-            String content;
-            try (FileWriter writer = new FileWriter("C:\\User\\sokol\\Main\\src\\Games\\res\\temp\\text") {
-                writer.write();
-                System.out.println("Лог успешно записан в файл temp.txt");
+
+
+            try (FileWriter writer = new FileWriter(filePaths)) {
+                writer.write(content);
+                System.out.println(content);
             } catch (IOException e) {
-                System.out.println("Ошибка при записи лога в файл temp.txt: " + e.getMessage());
+                System.out.println(content + e.getMessage());
             }
         }
-
+        }
     }
-}
