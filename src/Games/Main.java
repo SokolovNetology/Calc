@@ -13,24 +13,24 @@ public class Main {
         StringBuilder logBuilder = new StringBuilder();
 
         List<String> directories = List.of(
-                "C:\\User\\sokol\\Main\\src\\Games\\",
-                         "C:\\User\\sokol\\Main\\src\\Games\\src",
-                         "C:\\User\\sokol\\Main\\src\\Games\\src\\main",
-                         "C:\\User\\sokol\\Main\\src\\Games\\src\\test",
-                         "C:\\User\\sokol\\Main\\src\\Games\\res",
-                         "C:\\User\\sokol\\Main\\src\\Games\\res\\drawables",
-                         "C:\\User\\sokol\\Main\\src\\Games\\res\\vectors",
-                         "C:\\User\\sokol\\Main\\src\\Games\\res\\icons",
-                         "C:\\User\\sokol\\Main\\src\\Games\\res\\savegames",
-                         "C:\\User\\sokol\\Main\\src\\Games\\res\\temp");
+                "C:/User/sokol/Main/src/Games/",
+                         "C:/User/sokol/Main/src/Games/src",
+                         "C:/User/sokol/Main/src/Games/src/main",
+                         "C:/User/sokol/Main/src/Games/src/test",
+                         "C:/User/sokol/Main/src/Games/res",
+                         "C:/User/sokol/Main/src/Games/res/drawables",
+                         "C:/User/sokol/Main/src/Games/res/vectors",
+                         "C:/User/sokol/Main/src/Games/res/icons",
+                         "C:/User/sokol/Main/src/Games/res/savegames",
+                         "C:/User/sokol/Main/src/Games/res/temp");
         for (String directory : directories) {
             createDirectory(directory, logBuilder);
             //System.out.println(directory);
         }
         List<String> file = List.of(
-                          "C:\\User\\sokol\\Main\\src\\Games\\src\\main\\Main.java",
-                          "C:\\User\\sokol\\Main\\src\\Games\\src\\main\\Utils.java",
-                          "C:\\User\\sokol\\Main\\src\\Games\\res\\temp\\temp.txt");
+                          "C:/User/sokol/Main/src/Games/src/main/Main.java",
+                          "C:/User/sokol/Main/src/Games/src/main/Utils.java",
+                          "C:/User/sokol/Main/src/Games/res/temp/temp.txt");
         for (String fileP : file) {
             createFile(fileP, logBuilder);
 
@@ -58,8 +58,8 @@ public class Main {
             logBuilder.append("Ошибка при создании файла").append(path).append("дата/время  ").
                     append(LocalDateTime.now()).append(", ").append(e.getMessage()).append("\n");
         }
-              String filePaths = "C:\\User\\sokol\\Main\\src\\Games\\res\\temp\\text";
-              String content = "Ошибка при записи лога в файл temp.txt: ";
+              String filePaths = "C:/User/sokol/Main/src/Games/res/temp/text";
+              String content = "/temp.txt:/";
         public static void createFileLog (String filePaths, String content) {
 
 
@@ -67,7 +67,7 @@ public class Main {
                 writer.write(content);
                 System.out.println(content);
             } catch (IOException e) {
-                System.out.println(content + e.getMessage());
+                System.out.println("Ошибка при записи лога в файл temp.txt: " + e.getMessage());
             }
         }
         }
