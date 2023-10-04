@@ -1,4 +1,4 @@
-package Games;
+package games;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -26,7 +26,6 @@ public class Main {
                 "C:/User/sokol/Main/src/Games/res/temp");
         for (String directory : directories) {
             createDirectory(directory, logBuilder);
-            //System.out.println(directory);
         }
         List<String> file = List.of(
                 "C:/User/sokol/Main/src/Games/src/main/Main.java",
