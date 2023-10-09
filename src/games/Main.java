@@ -37,7 +37,7 @@ public class Main {
         }
         String filePaths = "C:/User/sokol/Main/src/Games/res/temp/text";
         String content = "/temp.txt:/";
-            createFileLog(filePaths,content);
+        createFileLog(filePaths, content);
     }
 
     public static void createDirectory(String path, StringBuilder logBuilder) {
@@ -60,15 +60,16 @@ public class Main {
                     append(LocalDateTime.now()).append(", ").append(e.getMessage()).append("\n");
         }
     }
-        public static void createFileLog (String filePaths, String content){
 
-            try (FileWriter writer = new FileWriter(filePaths)) {
-                writer.write(content);
-                writer.flush();
-                System.out.println(content);
-            } catch (IOException e) {
-                System.out.println("Ошибка при записи лога в файл temp.txt: " + e.getMessage());
-            }
+    public static void createFileLog(String filePaths, String content) {
+
+        try (FileWriter writer = new FileWriter(filePaths)) {
+            writer.write(content);
+            writer.flush();
+            System.out.println(content);
+        } catch (IOException e) {
+            System.out.println("Ошибка при записи лога в файл temp.txt: " + e.getMessage());
         }
     }
+}
 
